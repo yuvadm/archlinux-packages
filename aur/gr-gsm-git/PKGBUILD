@@ -2,7 +2,7 @@
 
 pkgname=gr-gsm-git
 pkgver=e60e671
-pkgrel=1
+pkgrel=2
 pkgdesc="Gnuradio blocks and tools for receiving GSM transmissions"
 arch=('any')
 url="https://github.com/ptrkrysik/gr-gsm"
