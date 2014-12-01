@@ -2,7 +2,7 @@
 
 pkgname=gr-gsm-git
 pkgver=e60e671
-pkgrel=2
+pkgrel=3
 pkgdesc="Gnuradio blocks and tools for receiving GSM transmissions"
 arch=('any')
 url="https://github.com/ptrkrysik/gr-gsm"
@@ -22,7 +22,7 @@ pkgver() {
 build() {
   cd $_gitname
   mkdir build && cd build
-  cmake ..
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
   make
 }
 
