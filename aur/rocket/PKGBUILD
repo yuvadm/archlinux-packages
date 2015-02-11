@@ -14,6 +14,7 @@ sha1sums=('91762f1ae2ee949f6e1d7af81dae1c1e4fb31002')
 package() {
   cd $srcdir/${pkgname}-v${pkgver}
   install -Dm755 rkt ${pkgdir}/usr/bin/rkt
+  install -Dm644 stage1.aci ${pkgdir}/usr/bin/stage1.aci
 }
 
 # vim:set ts=2 sw=2 et:
