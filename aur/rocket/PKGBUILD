@@ -3,7 +3,7 @@
 
 pkgname=rocket
 pkgver=0.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc="App container runtime"
 arch=('x86_64')
 url="https://github.com/coreos/rocket"
@@ -20,7 +20,6 @@ build() {
 
 package() {
   cd "${pkgname}-${pkgver}"
-  mkdir -p "$pkgdir/usr/{bin,share}"
   install -Dm755 bin/rkt "$pkgdir/usr/bin/rkt"
   install -Dm644 bin/stage1.aci "$pkgdir/usr/share/rkt/stage1.aci"
 }
