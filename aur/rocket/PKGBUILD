@@ -2,7 +2,7 @@
 # Contributor: Kenny Rasschaert <kenny dot rasschaert at gmail dot com> PGP-Key: 1F70454121E41419
 
 pkgname=rocket
-pkgver=0.4.0
+pkgver=0.4.1
 pkgrel=1
 pkgdesc="App container runtime"
 arch=('x86_64')
@@ -11,7 +11,7 @@ license=(apache)
 makedepends=('cpio' 'go' 'squashfs-tools')
 provides=('rocket')
 source=("https://github.com/coreos/rocket/archive/v${pkgver}.tar.gz")
-sha1sums=('543a7d0d29c462a1b64e6e9393471d62a0c07c16')
+sha1sums=('1f37d240bb9e92fcef0c6d2d0edd2088ba93a475')
 
 build() {
   cd "${pkgname}-${pkgver}"
