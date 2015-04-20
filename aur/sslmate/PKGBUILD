@@ -14,6 +14,6 @@ sha1sums=('1245052444f6ed959fac313430990150444e3b76')
 
 package() {
   cd $srcdir/${pkgname}-${pkgver}
-  make install PREFIX=/usr DESTDIR=${pkgdir}
+  make install PREFIX=/usr LIBEXECDIR=/usr/lib/sslmate DESTDIR=${pkgdir}
 }
 # vim:set ts=2 sw=2 et:
