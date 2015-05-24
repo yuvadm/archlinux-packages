@@ -8,18 +8,19 @@ arch=('any')
 url="http://openbsc.osmocom.org/trac/wiki/libosmo-abis"
 license=(GPL)
 depends=('libosmocore' 'ortp')
-source=("http://git.osmocom.org/${pkgname}/snapshot/${pkgname}-${pkgver}.tar.gz")
-sha256sums=("fe973cf8f7154b0854bc38c51670e8c443bb22bd9b55ad92bf123f94c52181e5")
+makedepends=('git')
+source=("git://git.osmocom.org/${pkgname}.git#tag=v${pkgver}")
+sha256sums=("SKIP")
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}"
   autoreconf -i
   ./configure --prefix=/usr
   make
 }
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}"
   make DESTDIR=$pkgdir install
 }
 
