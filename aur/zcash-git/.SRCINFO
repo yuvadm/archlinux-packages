@@ -1,0 +1,16 @@
+pkgbase = zcash-git
+	pkgdesc = Decentralized and open source cryptocurrency
+	pkgver = zc.v0.11.2.z0.15.g405dd80
+	pkgrel = 1
+	url = https://z.cash
+	install = zcash-git.install
+	arch = any
+	license = MIT
+	makedepends = wget
+	makedepends = unzip
+	provides = zcash
+	source = git+https://github.com/Electric-Coin-Company/zcash
+	sha1sums = SKIP
+
+pkgname = zcash-git
+
