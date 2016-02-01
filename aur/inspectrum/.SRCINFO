@@ -1,0 +1,16 @@
+pkgbase = inspectrum
+	pkgdesc = SDR signal analyzer
+	pkgver = 0.1.1
+	pkgrel = 1
+	url = https://github.com/miek/inspectrum
+	arch = any
+	license = GPL
+	makedepends = cmake
+	makedepends = pkg-config
+	depends = qt5-base
+	depends = fftw
+	source = https://github.com/miek/inspectrum/archive/v0.1.1.tar.gz
+	sha256sums = b139cd7978f294d4872a1e3e70a813f4e9600f7677da5b9f6c431b3fa7f7e03e
+
+pkgname = inspectrum
+
