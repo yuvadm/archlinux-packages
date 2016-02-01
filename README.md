@@ -8,17 +8,9 @@ Feel free to open issues/PRs in this repository for fixes to be merged into the 
 
 ## Usage
 
-### New AUR Package
+Use the `pkg.sh` wrapper script to run the common commands:
 
 ```bash
-$ git remote add -f pkgname ssh://aur@aur.archlinux.org/pkgname.git
-$ git merge -s ours --no-commit pkgname/master
-$ git read-tree --prefix=pkgname/ -u pkgname/master
-$ git commit -m "Add pkgname subtree"
-```
-
-### Synchronizing Existing Package Updates
-
-```bash
-$ git pull -s subtree pkgname master
+$ ./pkg.sh add pkgname
+$ ./pkg.sh update pkgname
 ```
