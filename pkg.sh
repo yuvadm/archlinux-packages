@@ -1,11 +1,11 @@
 usage() {
-		echo ""
-		echo "Usage: $0 <add|update> <pkgname>"
-		echo "       $0 import <pkgname> [pkgname] ..."
-		echo ""
-		echo "This script wraps the typical AUR creation and update procedures"
-		echo ""
-		exit 1
+	echo ""
+	echo "Usage: $0 <add|update> <pkgname>"
+	echo "       $0 import <pkgname> [pkgname] ..."
+	echo ""
+	echo "This script wraps the typical AUR creation and update procedures"
+	echo ""
+	exit 1
 }
 
 add_pkg() {
