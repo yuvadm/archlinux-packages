@@ -13,9 +13,7 @@ add_pkg() {
 	[[ -z $pkgname ]] && usage 
 
 	git remote add -f $pkgname "ssh://aur@aur.archlinux.org/$pkgname.git"
-	git merge -s ours --no-commit "$pkgname/master"
-	git read-tree "--prefix=$pkgname/" -u "$pkgname/master"
-	git commit -m "Add $pkgname subtree"
+	git subtree add --prefix "aur/$pkgname" $pkgname master
 }
 
 update_pkg() {
