@@ -1,0 +1,25 @@
+pkgbase = rkt-git
+	pkgdesc = App container runtime
+	pkgver = 0.11.0.r12.gfad1cb1
+	pkgrel = 1
+	url = https://github.com/coreos/rkt
+	install = rkt.install
+	arch = x86_64
+	license = apache
+	makedepends = cpio
+	makedepends = go
+	makedepends = wget
+	makedepends = squashfs-tools
+	makedepends = perl-capture-tiny
+	makedepends = intltool
+	makedepends = bc
+	provides = rkt
+	conflicts = rocket
+	conflicts = rkt
+	replaces = rocket
+	replaces = rkt
+	source = rkt-git::git+https://github.com/coreos/rkt
+	md5sums = SKIP
+
+pkgname = rkt-git
+
