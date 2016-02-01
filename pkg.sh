@@ -20,7 +20,7 @@ update_pkg() {
 	local pkgname="$1"
 	[[ -z $pkgname ]] && usage 
 
-	git pull -s subtree $pkgname master
+	git subtree push --prefix "aur/$pkgname" $pkgname master
 }
 
 import_pkgs() {
