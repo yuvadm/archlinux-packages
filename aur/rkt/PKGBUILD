@@ -1,16 +1,17 @@
 # Maintainer: Yuval Adam <yuval at y3xz dot com> PGP-Key: 271386AA2EB7672F
 # Contributor: Kenny Rasschaert <kenny dot rasschaert at gmail dot com> PGP-Key: 1F70454121E41419
 # Contributor: Adrián Pérez de Castro <adrian at perezdecastro dor org> PGP-Key: 91C559DBE4C9123B
+# Contributor: Carl George <arch at cgtx dot us> PGP-Key: 4BA2F7E101D9F512
 
 pkgname=rkt
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="App container runtime"
 arch=('x86_64')
 url="https://github.com/coreos/rkt"
 license=(apache)
-depends=('glibc' 'openssl' 'trousers' 'zlib')
-makedepends=('cpio' 'automake' 'go' 'wget' 'squashfs-tools' 'perl-capture-tiny' \
+depends=('glibc' 'openssl' 'zlib')
+makedepends=('cpio' 'go' 'wget' 'squashfs-tools' 'perl-capture-tiny' \
   'intltool' 'gperf' 'git' 'libseccomp')
 provides=('rkt')
 replaces=('rocket')
