@@ -7,7 +7,7 @@ pkgdesc="Installer for the Tails live operating system"
 arch=('x86_64' 'i686')
 url="https://tails.boum.org/"
 license=(GPL)
-depends=('gtk3' 'udisks2' 'syslinux' 'p7zip' 'python2-configobj' 'urlgrabber')
+depends=('cdrkit' 'coreutils' 'dosfstools' 'e2fsprogs' 'gptfdisk' 'gtk3' 'p7zip' 'python2-configobj' 'syslinux' 'udisks2' 'urlgrabber')
 makedepends=('git')
 source=("git://git.tails.boum.org/liveusb-creator#tag=tails-installer_${pkgver}")
 sha256sums=('SKIP')
