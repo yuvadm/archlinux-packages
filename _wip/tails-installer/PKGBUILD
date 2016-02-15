@@ -13,15 +13,9 @@ source=("git://git.tails.boum.org/liveusb-creator#tag=tails-installer_${pkgver}"
 sha256sums=('SKIP')
 _pkgname=liveusb-creator
 
-build() {
-  cd "${srcdir}/${_pkgname}"
-}
-
 package() {
   cd "${srcdir}/${_pkgname}"
-
   sed -i '1!b;s/python/python2/' tails-installer{,-launcher}
-
   python2 setup.py install --root=${pkgdir}
 }
 
