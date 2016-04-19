@@ -20,6 +20,7 @@ source=("https://github.com/coreos/rkt/archive/v${pkgver}.tar.gz"
 sha256sums=('1ce98ff74aef3dc2c43025f2b458e6dbfeb6c7f756a313f4ecc2827fc84ce031'
             '1ad8d343191be731289577d249a2467fbe5a69949117601e760b459f599d311f')
 install="${pkgname}.install"
+rktbuild="${BUILDDIR:-$PWD}/build"
 
 prepare() {
   cd "${pkgname}-${pkgver}"
@@ -32,9 +33,9 @@ build() {
     --enable-tpm=auto \
     --with-stage1-flavors=coreos \
     --with-stage1-default-location=/usr/lib/rkt/stage1.aci
-  make -s
-  make -s bash-completion
-  make -s manpages
+  BUILDDIR=$rktbuild make -s
+  BUILDDIR=$rktbuild make -s bash-completion
+  BUILDDIR=$rktbuild make -s manpages
 }
 
 package() {
@@ -54,9 +55,8 @@ package() {
     install -Dm644 "dist/manpages/${f}" "${pkgdir}/usr/share/man/man1/${f}"
   done
 
-  cd "build-${pkgname}-${pkgver}"
-  install -Dm755 bin/rkt "$pkgdir/usr/bin/rkt"
-  install -Dm644 bin/stage1-coreos.aci "$pkgdir/usr/lib/rkt/stage1.aci"
+  install -Dm755 "${rktbuild}/bin/rkt" "$pkgdir/usr/bin/rkt"
+  install -Dm644 "${rktbuild}/bin/stage1-coreos.aci" "$pkgdir/usr/lib/rkt/stage1.aci"
 }
 
 # vim:set ts=2 sw=2 et:
