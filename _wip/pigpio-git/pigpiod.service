@@ -3,6 +3,7 @@ Description=pigpio daemon
 After=multi-user.target
 
 [Service]
+Type=forking
 Restart=on-failure
 ProtectSystem=full
 ProtectHome=true
