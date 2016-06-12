@@ -1,0 +1,13 @@
+[Unit]
+Description=pigpio daemon
+After=multi-user.target
+
+[Service]
+Restart=on-failure
+ProtectSystem=full
+ProtectHome=true
+
+ExecStart=/usr/bin/pigpiod
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,35 @@
+# Maintainer: Yuval Adam <yuval at y3xz dot com> PGP-Key: 271386AA2EB7672F
+
+pkgname=pigpio-git
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="A C library for Raspberry Pi GPIO control with Python bindings"
+arch=('x86_64' 'i686' 'armv7h')
+url="http://abyz.co.uk/rpi/pigpio/index.html"
+license=('custom')
+provides=('pigpio')
+source=(
+  'git+https://github.com/joan2937/pigpio'
+  'make.patch'
+  'pigpiod.service')
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare () {
+  cd "${srcdir}/pigpio"
+  patch -p1 < ../../make.patch
+}
+
+build () {
+  cd "${srcdir}/pigpio"
+  make
+}
+
+package() {
+  cd "${srcdir}"
+  install -Dm644 pigpiod.service "${pkgdir}/usr/lib/systemd/system/pigpiod.service"
+
+  cd "pigpio"
+  make install DESTDIR="${pkgdir}"
+}
+
+# vim:set ts=2 sw=2 et:
