@@ -1,7 +1,7 @@
 # Maintainer: Yuval Adam <yuval at y3xz dot com> PGP-Key: 271386AA2EB7672F
 
 pkgname=pigpio-git
-pkgver=0.2.0
+pkgver=862f445
 pkgrel=1
 pkgdesc="A C library for Raspberry Pi GPIO control with Python bindings"
 arch=('x86_64' 'i686' 'armv7h')
@@ -13,6 +13,11 @@ source=(
   'make.patch'
   'pigpiod.service')
 sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+pkgver() {
+  cd "${srcdir}/pigpio"
+  echo $(git describe --always | sed 's/-/./g')
+}
 
 prepare () {
   cd "${srcdir}/pigpio"
